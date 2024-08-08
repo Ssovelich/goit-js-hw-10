@@ -46,8 +46,12 @@ const timer = {
       const currentTime = new Date();
       const ms = userSelectedDate - currentTime;
       const { days, hours, minutes, seconds } = convertMs(ms);
-
-      //   записуємо значення днів, годин, хвилин та секунд в span
+        // при досягненні лічильником 0, він зупиняється
+      if (ms < 1000) {
+        clearInterval(id);
+        inputData.disabled = false;
+      }
+    //   записуємо значення днів, годин, хвилин та секунд в span
       spanDays.textContent = addLeadingZero(days);
       spanHours.textContent = addLeadingZero(hours);
       spanMinutes.textContent = addLeadingZero(minutes);
