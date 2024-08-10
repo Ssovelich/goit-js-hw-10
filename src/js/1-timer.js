@@ -2,6 +2,7 @@ import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
+import imgUrl from "../img/bi_x-octagon.png";
 
 const inputData = document.querySelector('#datetime-picker');
 const startBtn = document.querySelector('button[data-start]');
@@ -9,6 +10,7 @@ const spanDays = document.querySelector(`span[data-days]`);
 const spanHours = document.querySelector(`span[data-hours]`);
 const spanMinutes = document.querySelector(`span[data-minutes]`);
 const spanSeconds = document.querySelector(`span[data-seconds]`);
+const iconUrl = imgUrl;
 
 // кнопка Start неактивна поки не обрана валідна дата
 startBtn.disabled = true;
@@ -25,7 +27,7 @@ const options = {
   onClose(selectedDates) {
     if (selectedDates[0] <= Date.now()) {
         iziToast.show({
-        iconUrl: './img/bi_x-octagon.png',
+        iconUrl: `${iconUrl}`,
         title: 'Error',
         titleColor: 'white',
         message: 'Please choose a date in the future',
