@@ -14,7 +14,7 @@ function onSubmit(event) {
 
     const inputDelay = form.elements.delay.value;
     const inputState = form.elements.state.value;
-
+   
     const promise = new Promise((resolve, reject) => {    
         setTimeout(() => {
         if (inputState === 'fulfilled') {
@@ -25,8 +25,8 @@ function onSubmit(event) {
         }, inputDelay);
     });
     
-    promise.then(
-    value => {
+    promise
+    .then(value => {
         iziToast.show({
             iconUrl: `${iconOk}`,
             title: 'OK',
@@ -36,8 +36,8 @@ function onSubmit(event) {
             position: 'topRight',
             color: '#59a10d',
         })
-     },
-    error => {
+        })
+    .catch(error => {
         iziToast.show({
             iconUrl: `${iconError}`,
             title: 'Error',
@@ -47,7 +47,6 @@ function onSubmit(event) {
             position: 'topRight',
             color: '#ef4040',
         })
-    }
-);
+    });
     form.reset();
 };
