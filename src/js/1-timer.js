@@ -24,10 +24,14 @@ const options = {
 //   перевірка валідації дати(минуле чи майбутнє)
   onClose(selectedDates) {
     if (selectedDates[0] <= Date.now()) {
-      iziToast.error({
+        iziToast.show({
+        iconUrl: './icons/bi_x-octagon.png',
         title: 'Error',
+        titleColor: 'white',
         message: 'Please choose a date in the future',
-        position: 'topCenter',
+        messageColor: 'white',
+        position: 'topRight',
+        color: '#ef4040',
       });
         startBtn.disabled = true;
     } else {
