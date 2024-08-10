@@ -23,7 +23,7 @@ function onSubmit(event) {
     promise.then(
     value => {
         iziToast.show({
-            iconUrl: './src/img/bi_check2-circle.png',
+            iconUrl: './img/bi_check2-circle.png',
             title: 'OK',
             titleColor: 'white',
             message: `Fulfilled promise in ${inputDelay}ms`,
@@ -34,7 +34,7 @@ function onSubmit(event) {
      },
     error => {
         iziToast.show({
-            iconUrl: './src/img/bi_x-octagon.png',
+            iconUrl: './img/bi_x-octagon.png',
             title: 'Error',
             titleColor: 'white',
             message: `Rejected promise in ${inputDelay}ms`,
