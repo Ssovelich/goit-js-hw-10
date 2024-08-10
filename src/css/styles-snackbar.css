@@ -34,7 +34,7 @@ fieldset {
   border: 1px solid #808080;
   width: 330px;
   height: 64px;
-  margin: 0;
+  margin-bottom: 24px;
 }
 legend {
   font-family: 'Montserrat', sans-serif;
@@ -43,16 +43,18 @@ legend {
   line-height: 1.5;
   color: #2e2f42;
 }
+fieldset label {
+  cursor: pointer;
+}
 input[type='radio'] {
   width: 20px;
   height: 20px;
   cursor: pointer;
 }
 
-button {
+button[type='submit'] {
   border-radius: 8px;
   padding: 8px 16px;
-  margin-top: 24px;
   width: 360px;
   height: 40px;
   border: none;
@@ -65,6 +67,6 @@ button {
   letter-spacing: 0.04em;
   color: #fff;
 }
-button:hover {
+button[type='submit']:hover {
   background: #6c8cff;
 }
