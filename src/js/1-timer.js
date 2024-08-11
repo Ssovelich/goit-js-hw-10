@@ -35,15 +35,14 @@ const options = {
         position: 'topRight',
         color: '#ef4040',
       });
-        startBtn.disabled = true;
-    } else {
+      return;
+    } 
         startBtn.disabled = false;
         userSelectedDate = selectedDates[0];
-    }
-  },
+   },
 };
 
-const flatpickrFn = flatpickr('#datetime-picker', options);
+flatpickr(inputData, options);
 
 const timer = {
     start() {
@@ -53,9 +52,10 @@ const timer = {
       const ms = userSelectedDate - currentTime;
       const { days, hours, minutes, seconds } = convertMs(ms);
         // при досягненні лічильником 0, він зупиняється
-      if (ms < 1000) {
+      if (ms <= 0) {
         clearInterval(id);
         inputData.disabled = false;
+        return;
       }
     //   записуємо значення днів, годин, хвилин та секунд в span
       spanDays.textContent = addLeadingZero(days);
